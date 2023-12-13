@@ -1,13 +1,14 @@
 import QtQuick
 
 Window {
+    id:root
     width: 800
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    color: "#00091a"
     ClusterScreen
     {
-        id: normalMode;
+        id:clusterScreen ;
         anchors.fill: parent;
     }
 }

@@ -16,6 +16,10 @@ Item {
     property alias needleSource: needle.source
     property alias highlightSource: highlight.source
 
+    property string sportGauge: "images/gauge-gauge-frame-sport-side.png";
+    property string sportNeedle: "images/needle-standard-sport.png"
+    property string sportHighlight: "images/highlight-big-sport.png"
+
     width: 340;
     height: 340;
 
