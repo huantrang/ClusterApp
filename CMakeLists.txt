@@ -12,7 +12,16 @@ qt_add_executable(AppCluster
 )
 # Resources:
 set(qml_resource_files
+    "images/turn_left.png"
+    "images/turn_right.png"
     "images/gauge-gauge-frame.png"
+    "images/beam.png"
+    "images/high-beams.png"
+    "images/ready.png"
+    "images/parked.png"
+    "images/airbag.png"
+    "images/car-highlights.png"
+    "images/bg-mask.png"
     "images/highlight-normal.png"
     "images/needle-normal.png"
     "images/top-line.png"
@@ -26,6 +35,8 @@ set(qml_resource_files
     "images/speed-limit-warnings/70.png"
     "images/speed-limit-warnings/50.png"
     "images/speed-limit-warnings/30.png"
+    "images/fuel.png"
+    "images/battery.png"
     "Main.qml"
     "BaseGauge.qml"
     "Gauge.qml"
@@ -37,6 +48,9 @@ set(qml_resource_files
     "MiddleGauge.qml"
     "SportGauge.qml"
     "TempGauge.qml"
+    "LinearGauge.qml"
+    "TellTalesIndicator.qml"
+    "TellTales.qml"
 )
 
 qt_add_resources(AppCluster "qml"
