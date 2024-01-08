@@ -1,5 +1,8 @@
+#include "speedviewmodel.h"
+
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 
 int main(int argc, char *argv[])
 {
@@ -18,5 +21,8 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection);
     engine.load(url);
 
+    std::shared_ptr<SpeedViewModel> speedViewModel = std::make_shared<SpeedViewModel>();
+    QQmlContext* rootContext = engine.rootContext();
+    rootContext->setContextProperty("SpeedViewModel", speedViewModel.get());
     return app.exec();
 }

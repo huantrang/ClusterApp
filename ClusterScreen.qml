@@ -44,23 +44,15 @@ Item {
             y: 295
             width: 44
         }
-        SportGauge {
+        SpeedGauge {
             id: leftGauge;
             x: 20
             y: 44;
             leftPosition: true;
-            value: 50
-            maxValue: 200
-            textLabel: "km/h"
             valueTextScale: 0.8;
             valueHorizontalCenterOffset: -20;
             labelHorizontalCenterOffset: -18;
             labelVerticalOffset: -5;
-
-            Component.onCompleted:
-            {
-                console.log(leftGauge.x);
-            }
         }
 
         TempGauge {

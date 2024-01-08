@@ -18,24 +18,15 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
 
-        ShaderEffect {
-            anchors.fill: parent
-            fragmentShader: "
-                varying highp vec2 qt_TexCoord0;
-                uniform lowp float qt_Opacity;
-                uniform lowp vec4 color;
-
-                void main() {
-                    gl_FragColor = texture2D(source, qt_TexCoord0) * color * qt_Opacity;
-                }
-            "
-            property variant source: ShaderEffectSource { sourceItem: image }
-            property color color: indicator.active ? indicator.activeColor : indicator.inactiveColor
-            Behavior on color { ColorAnimation {
-                duration: 150
-                easing.type: Easing.InOutQuad
-            }}
-        }
+        // ShaderEffect {
+        //     anchors.fill: parent
+        //     property variant source: ShaderEffectSource { sourceItem: image }
+        //     property color color: indicator.active ? indicator.activeColor : indicator.inactiveColor
+        //     Behavior on color { ColorAnimation {
+        //         duration: 150
+        //         easing.type: Easing.InOutQuad
+        //     }}
+        // }
 
         Behavior on opacity { NumberAnimation {
             easing.type: Easing.InOutQuad

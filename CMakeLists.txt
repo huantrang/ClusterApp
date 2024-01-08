@@ -9,6 +9,8 @@ find_package(Qt6 6.2 REQUIRED COMPONENTS Quick)
 
 qt_add_executable(AppCluster
     main.cpp
+    speedviewmodel.h speedviewmodel.cpp
+    clusterstruct.h
 )
 # Resources:
 set(qml_resource_files
@@ -46,7 +48,7 @@ set(qml_resource_files
     "SpeedLimitIndicator.qml"
     "SpeedLimitValues.qml"
     "MiddleGauge.qml"
-    "SportGauge.qml"
+    "SpeedGauge.qml"
     "TempGauge.qml"
     "LinearGauge.qml"
     "TellTalesIndicator.qml"
