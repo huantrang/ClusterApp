@@ -5,7 +5,7 @@ Gauge {
     labelHorizontalCenterOffset: -11
     valueHorizontalCenterOffset: -11
     value: SpeedViewModel.Speed
-    maxValue: 200
+    maxValue: SpeedViewModel.MaxSpeed
     textLabel: SpeedViewModel.Unit
     gaugeSource: sportGauge
     needleSource: sportNeedle

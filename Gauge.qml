@@ -10,6 +10,8 @@ BaseGauge {
     property int labelVerticalOffset: 0
     property int valueVerticalCenterOffset: -7
     property int valueHorizontalCenterOffset: 0
+    needleOffsetX: -1
+    needleOffsetY: -38
 
     Repeater {
         model: 13;
@@ -42,8 +44,8 @@ BaseGauge {
     Text {
         id: textValue
         anchors.centerIn: parent
-        anchors.verticalCenterOffset: valueVerticalCenterOffset
-        anchors.horizontalCenterOffset: valueHorizontalCenterOffset
+        // anchors.verticalCenterOffset: valueVerticalCenterOffset
+        // anchors.horizontalCenterOffset: valueHorizontalCenterOffset
         opacity: labelOpacity
         horizontalAlignment: Text.AlignHCenter
         text: animatedValue.toFixed(0);
@@ -71,7 +73,6 @@ BaseGauge {
         id: label
         horizontalAlignment: Text.AlignHCenter
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.horizontalCenterOffset: labelHorizontalCenterOffset
         anchors.topMargin: labelVerticalOffset
         anchors.top: textValue.bottom;
         opacity: labelOpacity

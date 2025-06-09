@@ -11,5 +11,19 @@ struct SpeedData
     std::string m_Unit;
 };
 
+enum class GEAR_SHIFT
+{
+    P,
+    D,
+    R,
+    N
+};
+
+struct GearShiftData
+{
+    GEAR_SHIFT mGearShiftNumber;
+    double m_RPMValue;
+};
+
 
 #endif // CLUSTERSTRUCT_H

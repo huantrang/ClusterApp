@@ -2,56 +2,56 @@ import QtQuick
 
 Row {
     id: telltales;
-
     TellTalesIndicator
     {
-        source: "images/turn_left.png";
-        activeColor: "#19f801";
+        source: "images/left_arrow.png";
         active: true;
-        imageOpacity: 1;
         blinking: true;
     }
     TellTalesIndicator
     {
-        source: "images/beam.png";
-        activeColor: "#19f801";
+        source: "images/doors.png";
         active: false;
-        imageOpacity: 1;
     }
     TellTalesIndicator
     {
-        source: "images/high-beams.png";
-        activeColor: "#0066ff";
+        source: "images/wheel.png";
         active: false;
-        imageOpacity: 1;
     }
     TellTalesIndicator
     {
-        source: "images/ready.png";
-        activeColor: "#19f801";
+        source: "images/seat_belt.png";
         active: false;
-        imageOpacity: 1;
     }
     TellTalesIndicator
     {
-        source: "images/parked.png";
-        activeColor: "#ff0000";
+        source: "images/brake_system_warning.png";
         active: false;
-        imageOpacity: 1;
     }
     TellTalesIndicator
     {
-        source: "images/airbag.png";
-        activeColor: "#ff0000";
+        source: "images/parking-lights.png";
         active: false;
-        imageOpacity: 1
     }
     TellTalesIndicator
     {
-        source: "images/turn_right.png";
-        activeColor: "#19f801";
+        source: "images/malfunction-indicador.png";
+        active: true;
+    }
+    TellTalesIndicator
+    {
+        source: "images/high_beams.png";
+        active: true;
+    }
+    TellTalesIndicator
+    {
+        source: "images/oil.png";
+        active: true;
+    }
+    TellTalesIndicator
+    {
+        source: "images/right_arrow.png";
         active: false;
-        imageOpacity: 1;
-        blinking: true;
+        blinking: false;
     }
 }

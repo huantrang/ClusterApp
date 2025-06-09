@@ -9,25 +9,15 @@ Item {
     property bool active: false
     property color activeColor: "#19f801"
     property color inactiveColor: "#001b4d"
-    property alias imageOpacity: image.opacity
     property alias blinking: indicatorBlinkAnimation.running
 
     Image {
         id: image
-        source: indicator.active ? indicator.activeColor : indicator.inactiveColor
+        width: 24
+        height: 24
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-
-        // ShaderEffect {
-        //     anchors.fill: parent
-        //     property variant source: ShaderEffectSource { sourceItem: image }
-        //     property color color: indicator.active ? indicator.activeColor : indicator.inactiveColor
-        //     Behavior on color { ColorAnimation {
-        //         duration: 150
-        //         easing.type: Easing.InOutQuad
-        //     }}
-        // }
-
+        opacity: active === true ? 1 : 0.1
         Behavior on opacity { NumberAnimation {
             easing.type: Easing.InOutQuad
             duration: TellTalesModel.opacityChangeDuration

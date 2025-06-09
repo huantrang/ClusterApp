@@ -5,23 +5,20 @@ project(Cluster VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+list(APPEND CMAKE_PREFIX_PATH "~/Qt/6.3.0/gcc_64")
+
 find_package(Qt6 6.2 REQUIRED COMPONENTS Quick)
 
 qt_add_executable(AppCluster
     main.cpp
     speedviewmodel.h speedviewmodel.cpp
     clusterstruct.h
+    gearshiftviewmodel.h gearshiftviewmodel.cpp
+    tempviewmodel.h tempviewmodel.cpp
 )
 # Resources:
 set(qml_resource_files
-    "images/turn_left.png"
-    "images/turn_right.png"
     "images/gauge-gauge-frame.png"
-    "images/beam.png"
-    "images/high-beams.png"
-    "images/ready.png"
-    "images/parked.png"
-    "images/airbag.png"
     "images/car-highlights.png"
     "images/bg-mask.png"
     "images/highlight-normal.png"
@@ -39,6 +36,16 @@ set(qml_resource_files
     "images/speed-limit-warnings/30.png"
     "images/fuel.png"
     "images/battery.png"
+    "images/doors.png"
+    "images/wheel.png"
+    "images/right_arrow.png"
+    "images/left_arrow.png"
+    "images/seat_belt.png"
+    "images/brake_system_warning.png"
+    "images/parking-lights.png"
+    "images/high_beams.png"
+    "images/malfunction-indicador.png"
+    "images/oil.png"
     "Main.qml"
     "BaseGauge.qml"
     "Gauge.qml"

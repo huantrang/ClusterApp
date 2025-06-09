@@ -5,7 +5,7 @@ Item {
     id: root;
     property bool leftPosition;
     property real value;
-    property int minAngle: 0
+    property real minAngle: 0
     property int needleOffsetX: 0
     property int needleOffsetY: 0
     property int highlightOffsetX: 0

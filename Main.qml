@@ -6,6 +6,7 @@ Window {
     height: 480
     visible: true
     color: "#00091a"
+
     ClusterScreen
     {
         id:clusterScreen ;

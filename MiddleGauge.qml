@@ -14,6 +14,10 @@ BaseGauge {
     highlightOffsetX: 1
     highlightOffsetY: -22
 
+    value: GearShiftViewModel.RPMValue;
+    maxValue: GearShiftViewModel.MaxRPMValue;
+    valueText: GearShiftViewModel.GearShiftNumber;
+
     gaugeSource: "images/gauge-gauge-frame-sport-center.png"
     needleSource: sportNeedle
     highlightSource: sportHighlight

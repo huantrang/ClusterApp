@@ -3,9 +3,6 @@
 SpeedViewModel::SpeedViewModel(QObject *parent)
     : QObject{parent}
 {
-    setSpeed(100);
-    setLimitedSpeed(70);
-    setUnit("km/h");
 }
 
 double SpeedViewModel::Speed() const
@@ -15,7 +12,7 @@ double SpeedViewModel::Speed() const
 
 void SpeedViewModel::setSpeed(double newSpeed)
 {
-    if (qFuzzyCompare(m_Speed,newSpeed))
+    if (qFuzzyCompare(m_Speed,newSpeed) || newSpeed > m_MaxSpeed || newSpeed < 0)
         return;
     m_Speed = newSpeed;
     emit SpeedChanged();
@@ -52,4 +49,17 @@ void SpeedViewModel::onSpeedDataModelChanged(SpeedData speedData)
     setSpeed(speedData.m_Speed);
     setLimitedSpeed(speedData.m_LimitedSpeed);
     setUnit(QString::fromStdString(speedData.m_Unit));
+}
+
+uint64_t SpeedViewModel::MaxSpeed() const
+{
+    return m_MaxSpeed;
+}
+
+void SpeedViewModel::setMaxSpeed(uint64_t newMaxSpeed)
+{
+    if (m_MaxSpeed == newMaxSpeed)
+        return;
+    m_MaxSpeed = newMaxSpeed;
+    emit MaxSpeedChanged();
 }

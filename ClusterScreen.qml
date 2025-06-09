@@ -8,23 +8,26 @@ Item {
         leftPosition: true
         anchors.horizontalCenter: parent.horizontalCenter
         valueVerticalCenterOffset: -27
-        y: 62;
-        value: 2;
-        maxValue: 10;
-        valueText: "D"
+        y: 65;
         textLabel: "Gear shift"
         maxAngle: 285
         minAngle: 45
         labelOpacity: 1
         opacity: 1;
-
+        transform: [
+            Scale {
+                origin.x: (middleGauge.width/2).toFixed(0)
+                origin.y: (middleGauge.height/2).toFixed(0)
+                xScale: 0.9
+                yScale: 0.9
+            }
+        ]
         Text {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenterOffset: -105
             anchors.verticalCenterOffset: 95
-
-            opacity: 0.2
+            opacity: 0.6
             horizontalAlignment: Text.AlignRight
             text: "x1000\n    RPM"
             color: "#cadfff"
@@ -44,28 +47,29 @@ Item {
             y: 295
             width: 44
         }
+
         SpeedGauge {
             id: leftGauge;
             x: 20
             y: 44;
             leftPosition: true;
-            valueTextScale: 0.8;
+            valueTextScale: 0.6;
             valueHorizontalCenterOffset: -20;
             labelHorizontalCenterOffset: -18;
             labelVerticalOffset: -5;
+            minAngle: 1
+            maxAngle: 150
         }
 
         TempGauge {
             id: rightGauge;
             x: root.width - rightGauge.width - 20;
             y: 44;
-            value: 50;
-            maxValue: 180;
             maxAngle: 180;
-
-            opacity: 1;
+            minAngle: 0;
         }
     }
+
     Image {
         id: bg
         anchors { bottom: parent.bottom; horizontalCenter: parent.horizontalCenter; }
