@@ -26,6 +26,10 @@ signals:
     void RPMValueChanged();
 
     void MaxRPMValueChanged();
+public slots:
+    void updateGearShiftNumber(const uint8_t gearShift);
+    void updateRPMValue(double rpm);
+    void updateMaxRPMValue(double maxRpm);
 
 private:
     QString m_GearShiftNumber{"P"};

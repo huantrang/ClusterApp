@@ -12,9 +12,19 @@ find_package(Qt6 6.2 REQUIRED COMPONENTS Quick)
 qt_add_executable(AppCluster
     main.cpp
     speedviewmodel.h speedviewmodel.cpp
-    clusterstruct.h
     gearshiftviewmodel.h gearshiftviewmodel.cpp
     tempviewmodel.h tempviewmodel.cpp
+    naviviewmodel.h naviviewmodel.cpp
+    laneassistviewmodel.h laneassistviewmodel.cpp
+    TelltaleViewModel.h TelltaleViewModel.cpp
+    model/gearshiftmodel.cpp model/gearshiftmodel.h
+    model/laneassistmodel.cpp model/laneassistmodel.h
+    model/navimodel.cpp model/navimodel.h
+    model/telltalemodel.cpp model/telltalemodel.h
+    model/tempmodel.cpp model/tempmodel.h
+    model/speedmodel.cpp model/speedmodel.h
+    socket/TcpReceiver.h socket/TcpReceiver.cpp
+    model/basemodel.h
 )
 # Resources:
 set(qml_resource_files
@@ -46,6 +56,17 @@ set(qml_resource_files
     "images/high_beams.png"
     "images/malfunction-indicador.png"
     "images/oil.png"
+    "images/arrows/arrow-straight.png"
+    "images/arrows/arrow-right-45.png"
+    "images/arrows/arrow-right-90.png"
+    "images/arrows/arrow-right-round.png"
+    "images/arrows/arrow-left-45.png"
+    "images/arrows/arrow-left-90.png"
+    "images/arrows/arrow-left-round.png"
+    "images/lanes/red-border-left.png"
+    "images/lanes/red-border-right.png"
+    "images/lanes/white-line-left.png"
+    "images/lanes/white-line-right.png"
     "Main.qml"
     "BaseGauge.qml"
     "Gauge.qml"
@@ -60,6 +81,12 @@ set(qml_resource_files
     "LinearGauge.qml"
     "TellTalesIndicator.qml"
     "TellTales.qml"
+    "GuideArrow.qml"
+    "GuideArrowItem.qml"
+    "Navi.qml"
+    "NormalModeContentItem.qml"
+    "LaneAssist.qml"
+    "LaneAssistWhiteLine.qml"
 )
 
 qt_add_resources(AppCluster "qml"

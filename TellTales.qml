@@ -5,53 +5,53 @@ Row {
     TellTalesIndicator
     {
         source: "images/left_arrow.png";
-        active: true;
-        blinking: true;
+        active: TelltaleViewModel.leftArrowActive;
+        blinking: TelltaleViewModel.leftArrowActive;
     }
     TellTalesIndicator
     {
         source: "images/doors.png";
-        active: false;
+        active: TelltaleViewModel.doorsActive;
     }
     TellTalesIndicator
     {
         source: "images/wheel.png";
-        active: false;
+        active: TelltaleViewModel.wheelActive;
     }
     TellTalesIndicator
     {
         source: "images/seat_belt.png";
-        active: false;
+        active: TelltaleViewModel.seatBeltActive;
     }
     TellTalesIndicator
     {
         source: "images/brake_system_warning.png";
-        active: false;
+        active: TelltaleViewModel.brakeSystemActive;
     }
     TellTalesIndicator
     {
         source: "images/parking-lights.png";
-        active: false;
+        active: TelltaleViewModel.parkingLightsActive;
     }
     TellTalesIndicator
     {
         source: "images/malfunction-indicador.png";
-        active: true;
+        active: TelltaleViewModel.malfunctionActive;
     }
     TellTalesIndicator
     {
         source: "images/high_beams.png";
-        active: true;
+        active: TelltaleViewModel.highBeamsActive;
     }
     TellTalesIndicator
     {
         source: "images/oil.png";
-        active: true;
+        active: TelltaleViewModel.oilActive;
     }
     TellTalesIndicator
     {
         source: "images/right_arrow.png";
-        active: false;
-        blinking: false;
+        active: TelltaleViewModel.rightArrowActive;
+        blinking: TelltaleViewModel.rightArrowActive;
     }
 }

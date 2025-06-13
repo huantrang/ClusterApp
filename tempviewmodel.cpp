@@ -42,3 +42,18 @@ void TempViewModel::setTempUnit(const QString &newTempUnit)
     m_TempUnit = newTempUnit;
     emit TempUnitChanged();
 }
+
+void TempViewModel::updateTemp(double temp)
+{
+    setTemp(temp);
+}
+
+void TempViewModel::updateMaxTemp(double maxTemp)
+{
+    setMaxTemp(maxTemp);
+}
+
+void TempViewModel::updateTempUnit(const QString &unit)
+{
+    setTempUnit(unit);
+}

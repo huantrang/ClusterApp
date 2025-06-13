@@ -32,7 +32,7 @@ Item {
             text: "x1000\n    RPM"
             color: "#cadfff"
             font.pixelSize: 10
-            font.family: "Sarabun"
+            font.family: "Roboto"
         }
     }
 
@@ -97,72 +97,66 @@ Item {
         }
     }
 
-    Text {
-        id: odo
-        anchors.bottom: parent.bottom;
-        anchors.bottomMargin: 27;
-        anchors.left: parent.left;
-        anchors.leftMargin: 30;
-        text: "ODO";
-        color: "#657080"
-        font.pixelSize: 12;
-        font.family: "Sarabun";
-    }
-    Text {
-        id: odoValue
-        anchors.baseline: odo.baseline;
-        anchors.left: odo.right;
-        anchors.leftMargin: 4;
-        text: "10000";
-        color: "#cadfff";
-        font.pixelSize: 20;
-        font.family: "Sarabun";
-    }
-    Text {
-        id: odoUnit
-        anchors.baseline: odo.baseline;
-        anchors.left: odoValue.right;
-        anchors.leftMargin: 4;
-        text: "km";
-        color: "#657080"
-        font.pixelSize: 12;
-        font.family: "Sarabun";
-    }
+    Row {
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 40
+        x : 30
+        spacing: 30 // khoảng cách giữa ODO và RANGE, bạn có thể điều chỉnh
 
-    Text {
-        id: range
-        anchors.bottom: parent.bottom;
-        anchors.bottomMargin: 27;
-        x: 170
-        text: "RANGE";
-        color: "#657080"
-        font.pixelSize: 12;
-        font.family: "Sarabun";
-    }
-    Text {
-        id: rangeValue
-        anchors.baseline: range.baseline;
-        anchors.left: range.right;
-        anchors.leftMargin: 4;
-        text: "1";
-        color: "#cadfff";
-        font.pixelSize: 20;
-        font.family: "Sarabun";
-    }
-    Text {
-        id: rangeUnit
-        anchors.baseline: range.baseline;
-        anchors.left: rangeValue.right;
-        anchors.leftMargin: 4;
-        text: "km";
-        color: "#657080"
-        font.pixelSize: 12;
-        font.family: "Sarabun";
+        Row {
+            spacing: 4
+            Text {
+                id: range
+                text: "RANGE"
+                color: "#32CD32"
+                font.pixelSize: 14
+                font.family: "Roboto"
+            }
+            Text {
+                id: rangeValue
+                text: "200"
+                color: "#cadfff"
+                font.pixelSize: 14
+                font.family: "Roboto"
+            }
+            Text {
+                id: rangeUnit
+                text: "km"
+                color: "#32CD32"
+                font.pixelSize: 10
+                font.family: "Roboto"
+            }
+        }
+
+        Row {
+            spacing: 4
+            Text {
+                id: odo
+                text: "ODO"
+                color: "#32CD32"
+                font.pixelSize: 14
+                font.family: "Roboto"
+            }
+            Text {
+                id: odoValue
+                text: "10000"
+                color: "#cadfff"
+                font.pixelSize: 14
+                font.family: "Roboto"
+            }
+            Text {
+                id: odoUnit
+                text: "km"
+                color: "#32CD32"
+                font.pixelSize: 10
+                font.family: "Roboto"
+            }
+        }
     }
 
     LinearGauge {
         anchors.bottom: parent.bottom;
-        anchors.bottomMargin: 27;
+        anchors.bottomMargin: 40;
         x: 534;
         image: "images/fuel.png";
         emptyText: "E";
@@ -171,7 +165,7 @@ Item {
 
     LinearGauge {
         anchors.bottom: parent.bottom;
-        anchors.bottomMargin: 27;
+        anchors.bottomMargin: 40;
         x: 660;
         image: "images/battery.png";
         emptyText: "E";
@@ -183,6 +177,26 @@ Item {
         y:16;
         visible: true
     }
+
+    GuideArrowItem {
+        id:guideArrowItem
+        anchors.fill: parent
+        scale: root.scale
+    }
+
+    Navi
+    {
+        id:naviComponent
+        anchors.horizontalCenter: parent.horizontalCenter;
+        anchors.bottom: parent.bottom;
+        activeMode: guideArrowItem.visible
+    }
+
+    LaneAssist {
+        anchors.fill: parent
+        scale: root.scale
+    }
+
 
 
 }

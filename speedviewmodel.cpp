@@ -18,19 +18,6 @@ void SpeedViewModel::setSpeed(double newSpeed)
     emit SpeedChanged();
 }
 
-uint64_t SpeedViewModel::LimitedSpeed() const
-{
-    return m_LimitedSpeed;
-}
-
-void SpeedViewModel::setLimitedSpeed(uint64_t newLimitedSpeed)
-{
-    if (m_LimitedSpeed == newLimitedSpeed)
-        return;
-    m_LimitedSpeed = newLimitedSpeed;
-    emit LimitedSpeedChanged();
-}
-
 QString SpeedViewModel::Unit() const
 {
     return m_Unit;
@@ -44,13 +31,6 @@ void SpeedViewModel::setUnit(const QString &newUnit)
     emit UnitChanged();
 }
 
-void SpeedViewModel::onSpeedDataModelChanged(SpeedData speedData)
-{
-    setSpeed(speedData.m_Speed);
-    setLimitedSpeed(speedData.m_LimitedSpeed);
-    setUnit(QString::fromStdString(speedData.m_Unit));
-}
-
 uint64_t SpeedViewModel::MaxSpeed() const
 {
     return m_MaxSpeed;
@@ -62,4 +42,19 @@ void SpeedViewModel::setMaxSpeed(uint64_t newMaxSpeed)
         return;
     m_MaxSpeed = newMaxSpeed;
     emit MaxSpeedChanged();
+}
+
+void SpeedViewModel::updateSpeed(double speed)
+{
+    setSpeed(speed);
+}
+
+void SpeedViewModel::updateUnit(const QString &unit)
+{
+    setUnit(unit);
+}
+
+void SpeedViewModel::updateMaxSpeed(uint64_t maxSpeed)
+{
+    setMaxSpeed(maxSpeed);
 }

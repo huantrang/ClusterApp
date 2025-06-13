@@ -1,5 +1,5 @@
 import QtQuick
 
 SpeedLimitImage {
-    limit: SpeedViewModel.LimitedSpeed
+    limit: NaviViewModel.LimitedSpeed
 }

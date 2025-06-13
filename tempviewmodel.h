@@ -24,8 +24,13 @@ public:
 signals:
     void TempChanged();
     void MaxTempChanged();
-
     void TempUnitChanged();
+
+public slots:
+    void updateTemp(double temp);
+    void updateMaxTemp(double maxTemp);
+    void updateTempUnit(const QString &unit);
+
 
 private:
     double m_Temp{0};
