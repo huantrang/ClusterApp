@@ -136,15 +136,15 @@ Item {
 
     function calculateDuration(speed) {
         if (speed > 0 && speed < 30)
-            return 5000;
-        else if (speed >= 30 && speed < 60)
             return 3000;
+        else if (speed >= 30 && speed < 60)
+            return 1500;
         else if (speed >= 60 && speed < 100)
-            return 2000;
-        else if (speed >= 100 && speed < 150)
             return 1000;
-        else
+        else if (speed >= 100 && speed < 150)
             return 500;
+        else
+            return 200;
     }
 
     Binding {

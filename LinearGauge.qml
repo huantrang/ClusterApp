@@ -43,7 +43,7 @@ Item {
         y: 22;
         height: 16;
         font.pixelSize: 12;
-        font.family: "Roboto";
+        font.family: "Helvetica Neue";
         horizontalAlignment: Text.AlignHCenter;
     }
     Text {
@@ -57,7 +57,7 @@ Item {
         y: 22;
         height: 16;
         font.pixelSize: 12;
-        font.family: "Roboto";
+        font.family: "Helvetica Neue";
         horizontalAlignment: Text.AlignHCenter;
     }
 }

@@ -32,7 +32,7 @@ Item {
             text: "x1000\n    RPM"
             color: "#cadfff"
             font.pixelSize: 10
-            font.family: "Roboto"
+            font.family: "Helvetica Neue"
         }
     }
 
@@ -110,21 +110,21 @@ Item {
                 text: "RANGE"
                 color: "#32CD32"
                 font.pixelSize: 14
-                font.family: "Roboto"
+                font.family: "Helvetica Neue"
             }
             Text {
                 id: rangeValue
                 text: "200"
                 color: "#cadfff"
                 font.pixelSize: 14
-                font.family: "Roboto"
+                font.family: "Helvetica Neue"
             }
             Text {
                 id: rangeUnit
                 text: "km"
                 color: "#32CD32"
                 font.pixelSize: 10
-                font.family: "Roboto"
+                font.family: "Helvetica Neue"
             }
         }
 
@@ -135,21 +135,21 @@ Item {
                 text: "ODO"
                 color: "#32CD32"
                 font.pixelSize: 14
-                font.family: "Roboto"
+                font.family: "Helvetica Neue"
             }
             Text {
                 id: odoValue
                 text: "10000"
                 color: "#cadfff"
                 font.pixelSize: 14
-                font.family: "Roboto"
+                font.family: "Helvetica Neue"
             }
             Text {
                 id: odoUnit
                 text: "km"
                 color: "#32CD32"
                 font.pixelSize: 10
-                font.family: "Roboto"
+                font.family: "Helvetica Neue"
             }
         }
     }

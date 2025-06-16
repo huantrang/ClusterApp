@@ -4,7 +4,7 @@ NormalModeContentItem {
     id: root
 
     property string textColor: "#CADFFF"
-    property string textFont: "Inter"
+    property string textFont: "Helvetica Neue"
 
     Row {
         id: mainRow

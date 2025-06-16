@@ -28,7 +28,7 @@ BaseGauge {
         color: "#cadfff";
         font.pixelSize: 13;
         font.bold: true;
-        font.family: "Roboto";
+        font.family: "Helvetica Neue";
         transform: Scale {
             origin.x: transformOriginX - label.x
             origin.y: 340 - label.y
@@ -48,7 +48,7 @@ BaseGauge {
         color: "#cadfff";
         font.pixelSize: 13;
         font.bold: true;
-        font.family: "Roboto";
+        font.family: "Helvetica Neue";
         transform: Scale {
             origin.x: transformOriginX - label.x
             origin.y: 340 - label.y
@@ -66,7 +66,7 @@ BaseGauge {
         text: "Hot"
         color: "#ff0000"
         font.pixelSize: 12
-        font.family: "Roboto"
+        font.family: "Helvetica Neue"
     }
     Text {
         anchors.horizontalCenter: icon.horizontalCenter
@@ -77,7 +77,7 @@ BaseGauge {
         text: "Cool"
         color: "#cadfff"
         font.pixelSize: 12
-        font.family: "Roboto"
+        font.family: "Helvetica Neue"
     }
 }
 

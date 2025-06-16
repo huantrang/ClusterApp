@@ -25,7 +25,7 @@ BaseGauge {
             color: "#cadfff";
             font.pixelSize: 12;
             font.bold: false;
-            font.family: "Roboto";
+            font.family: "Helvetica Neue";
             opacity: {
                 var distance = Math.abs(animatedValue/interval - index);
                 var alphaResult = 1.5 - (distance / 1.25);
@@ -52,7 +52,7 @@ BaseGauge {
         color: "#cadfff";
         font.pixelSize: 64;
         font.bold: true;
-        font.family: "Roboto";
+        font.family: "Helvetica Neue";
         transform: [
             Scale {
                 origin.x: transformOriginX - textValue.x
@@ -79,7 +79,7 @@ BaseGauge {
         color: "#cadfff";
         font.pixelSize: 16;
         font.bold: false;
-        font.family: "Roboto";
+        font.family: "Helvetica Neue";
         transform: Scale {
             origin.x: transformOriginX - label.x
             origin.y: 340 - label.y
