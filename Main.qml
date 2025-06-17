@@ -7,9 +7,20 @@ Window {
     visible: true
     color: "#00091a"
 
+    // Biến điều khiển hiển thị màn hình chính
+    property bool splashFinished: false
+
+    SplashScreen {
+        id: splashScreen
+        anchors.fill: parent
+        visible: !root.splashFinished
+        onSplashDone: root.splashFinished = true
+    }
+
     ClusterScreen
     {
         id:clusterScreen ;
         anchors.fill: parent;
+        visible: root.splashFinished
     }
 }

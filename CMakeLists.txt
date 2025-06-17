@@ -17,12 +17,14 @@ qt_add_executable(AppCluster
     naviviewmodel.h naviviewmodel.cpp
     laneassistviewmodel.h laneassistviewmodel.cpp
     TelltaleViewModel.h TelltaleViewModel.cpp
+    commonviewmodel.h commonviewmodel.cpp
     model/gearshiftmodel.cpp model/gearshiftmodel.h
     model/laneassistmodel.cpp model/laneassistmodel.h
     model/navimodel.cpp model/navimodel.h
     model/telltalemodel.cpp model/telltalemodel.h
     model/tempmodel.cpp model/tempmodel.h
     model/speedmodel.cpp model/speedmodel.h
+    model/commonmodel.cpp model/commonmodel.h
     socket/TcpReceiver.h socket/TcpReceiver.cpp
     model/basemodel.h
 )
@@ -87,6 +89,7 @@ set(qml_resource_files
     "NormalModeContentItem.qml"
     "LaneAssist.qml"
     "LaneAssistWhiteLine.qml"
+    "SplashScreen.qml"
 )
 
 qt_add_resources(AppCluster "qml"

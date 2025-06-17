@@ -114,7 +114,7 @@ Item {
             }
             Text {
                 id: rangeValue
-                text: "200"
+                text: String(Math.round(1000 * (CommonViewModel.batteryValue + CommonViewModel.fuelValue) / 2))
                 color: "#cadfff"
                 font.pixelSize: 14
                 font.family: "Helvetica Neue"
@@ -139,7 +139,7 @@ Item {
             }
             Text {
                 id: odoValue
-                text: "10000"
+                text: CommonViewModel.odoValue
                 color: "#cadfff"
                 font.pixelSize: 14
                 font.family: "Helvetica Neue"
@@ -160,7 +160,7 @@ Item {
         x: 534;
         image: "images/fuel.png";
         emptyText: "E";
-        value: 0.5;
+        value: CommonViewModel.fuelValue;
     }
 
     LinearGauge {
@@ -169,7 +169,7 @@ Item {
         x: 660;
         image: "images/battery.png";
         emptyText: "E";
-        value: 0.7;
+        value: CommonViewModel.batteryValue;
     }
 
     TellTales {

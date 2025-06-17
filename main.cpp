@@ -1,5 +1,7 @@
+#include "model/commonmodel.h"
 #include "socket/TcpReceiver.h"
 #include "TelltaleViewModel.h"
+#include "commonviewmodel.h"
 #include "gearshiftviewmodel.h"
 #include "laneassistviewmodel.h"
 #include "naviviewmodel.h"
@@ -53,6 +55,7 @@ int main(int argc, char *argv[])
     std::shared_ptr<NaviViewModel> naviVM = std::make_shared<NaviViewModel>();
     std::shared_ptr<LaneAssistViewModel> laneVM = std::make_shared<LaneAssistViewModel>();
     std::shared_ptr<TelltaleViewModel> telltaleVM = std::make_shared<TelltaleViewModel>();
+    std::shared_ptr<CommonViewModel> commonVM = std::make_shared<CommonViewModel>();
 
     std::shared_ptr<GearShiftModel> gearShiftModel = std::make_shared<GearShiftModel>();
     std::shared_ptr<LaneAssistModel> laneModel = std::make_shared<LaneAssistModel>();
@@ -60,6 +63,7 @@ int main(int argc, char *argv[])
     std::shared_ptr<SpeedModel> speedModel = std::make_shared<SpeedModel>();
     std::shared_ptr<TelltaleModel> telltaleModel = std::make_shared<TelltaleModel>();
     std::shared_ptr<TempModel> tempModel = std::make_shared<TempModel>();
+    std::shared_ptr<CommonModel> commonModel = std::make_shared<CommonModel>();
 
     QQmlContext* rootContext = engine.rootContext();
     rootContext->setContextProperty("SpeedViewModel", speedVM.get());
@@ -68,6 +72,7 @@ int main(int argc, char *argv[])
     rootContext->setContextProperty("NaviViewModel", naviVM.get());
     rootContext->setContextProperty("LaneAssistViewModel", laneVM.get());
     rootContext->setContextProperty("TelltaleViewModel", telltaleVM.get());
+    rootContext->setContextProperty("CommonViewModel", commonVM.get());
 
     // Speed
     QObject::connect(speedModel.get(), &SpeedModel::speedChanged,
@@ -111,6 +116,14 @@ int main(int argc, char *argv[])
     QObject::connect(telltaleModel.get(), &TelltaleModel::telltaleFlagsChanged,
                      telltaleVM.get(), &TelltaleViewModel::updateTelltaleFlags);
 
+    // Common Data
+    QObject::connect(commonModel.get(), &CommonModel::odoValueChanged,
+                     commonVM.get(), &CommonViewModel::updateOdoValue);
+    QObject::connect(commonModel.get(), &CommonModel::fuelValueChanged,
+                     commonVM.get(), &CommonViewModel::updateFuelValue);
+    QObject::connect(commonModel.get(), &CommonModel::batteryValueChanged,
+                     commonVM.get(), &CommonViewModel::updateBatteryValue);
+
     //start socket
     startTcpReceiver(12345, gearShiftModel.get());
     startTcpReceiver(12346, laneModel.get());
@@ -118,6 +131,7 @@ int main(int argc, char *argv[])
     startTcpReceiver(12348, speedModel.get());
     startTcpReceiver(12349, telltaleModel.get());
     startTcpReceiver(12350, tempModel.get());
+    startTcpReceiver(12351, commonModel.get());
     //end socket
 
 
